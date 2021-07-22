@@ -1,0 +1,28 @@
+{
+  "APPMENU": "Menu",
+  "APPHOME" : "Home",
+  "APPMAPA": "Map",
+  "APPJUGAR": "Play",
+  "APPAYUDA": "Help",
+  "APPCONFIGURACION": "Settings",
+
+  "INICIOTITULONAVBAR": "Wellcome to Scape Room Barcelona",
+  "INICIOTITULO1": "Discover the city by playing!",
+  "INICIOTEXTO1": "Secrets of Old Barcelona is a unique and entertaining adventure that allows you to discover the city, its history and its legends in the form of a game. In this fun and unique outdoor Escape Room in Barcelona you are going to discover many curious facts about the city by solving various riddles and enigmas to reach the end point of the game and save the world. ",
+  "INICIOTITULO2": "El Gòtic, the most mysterious neighborhood in Barcelona ",
+
+  "MAPTITULONAVBAR": "Map",
+  "MAPTITULO1": "Gothic quarter of Barcelona ",
+  "MAPTEXTO1": "Here goes googlemap of BCN, the old town play area",
+
+  "JUGARTITULONAVBAR" : "PLAY",
+  "JUGARTEXTO1" : "Start the game, etc, etc",
+
+  "AYUDATITULONAVBAR" : "Help",
+  "AYUDATEXTO1" : "We are on the help page ",
+  "AYUDATEXTO2" : "Tips? Where to go?",
+
+  "AJUSTESTITULONAVBAR" : "Settings",
+  "AJUSTESTITULO" : "Settings",
+  "AJUSTESIDIOMA" : "Language selection"
+}
