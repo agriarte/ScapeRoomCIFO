@@ -32,4 +32,4 @@ npm-debug.log*
 /e2e
 /android
 /ios
-/history
+/.history
