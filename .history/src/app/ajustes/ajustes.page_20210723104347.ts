@@ -25,4 +25,5 @@ export class AjustesPage implements OnInit {
     this.translateService.use(event.detail.value);
     console.log('cambiar idioma: ' + event.detail.value);
   }
+
 }

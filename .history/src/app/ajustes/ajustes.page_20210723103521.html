@@ -15,28 +15,20 @@
   <div>
     <ion-list>
 
-      <ion-item class="select">
+      <!-- <ion-item class="select">
         <ion-label>{{ "AJUSTESTITULO" | translate }}</ion-label>
         <ion-icon name="chevron-forward-outline"></ion-icon>
-      </ion-item>
+      </ion-item> -->
 
       <ion-item class="select">
         <ion-label>{{ "AJUSTESIDIOMA" | translate }}</ion-label>
         <!-- ionChange emite cuando la selección cambia. Llama a método para cambiar idioma llevando nuevo valor en $event
         idiomaDefecto binding bidireccional con el idioma. Siempre reactivo a cambios de idioma -->
-        <ion-select cancelText='Cancel' [(ngModel)]="idiomaDefecto" placeholder='Selecciona'
-          (ionChange)="cambiarIdioma($event)">
+        <ion-select cancelText='' [(ngModel)]="idiomaDefecto" placeholder='Selecciona' (ionChange)="cambiarIdioma($event)">
           <ion-select-option *ngFor="let idioma of idiomas" [value]="idioma">{{idioma}}</ion-select-option>
         </ion-select>
       </ion-item>
 
-      <ion-item lines="full">
-        <ion-icon slot="start" name="moon"></ion-icon>
-        <ion-label>
-          {{ "AJUSTESNOCHEDIA" | translate }}
-        </ion-label>
-        <ion-toggle id="themeToggle" slot="end"></ion-toggle>
-      </ion-item>
     </ion-list>
   </div>
 
