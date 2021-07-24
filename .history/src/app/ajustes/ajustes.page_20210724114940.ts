@@ -1,7 +1,9 @@
-
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { Platform } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ajustes',
@@ -15,7 +17,22 @@ export class AjustesPage implements OnInit {
   darkMode = true;
 
   constructor(
-    private translateService: TranslateService) { }
+    private translateService: TranslateService,
+    private platform: Platform,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar
+  ) {
+    this.initializarDarkMode();
+  }
+
+  initializarDarkMode(){
+    this.platform.ready().then(() =&amp;amp;amp;amp;gt; {
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
+      this.cambiarDarkMode();
+       });
+  }
+
 
   ngOnInit() {
     this.idiomas = this.translateService.getLangs();

@@ -15,7 +15,8 @@ export class AjustesPage implements OnInit {
   darkMode = true;
 
   constructor(
-    private translateService: TranslateService) { }
+    private translateService: TranslateService) {  }
+
 
   ngOnInit() {
     this.idiomas = this.translateService.getLangs();

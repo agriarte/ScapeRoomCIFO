@@ -1,7 +1,6 @@
-
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ajustes',
@@ -14,8 +13,10 @@ export class AjustesPage implements OnInit {
 
   darkMode = true;
 
-  constructor(
-    private translateService: TranslateService) { }
+  constructor(private translateService: TranslateService) {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    this.darkMode = prefersDark.matches;
+  }
 
   ngOnInit() {
     this.idiomas = this.translateService.getLangs();
@@ -29,7 +30,7 @@ export class AjustesPage implements OnInit {
     console.log('cambiar idioma: ' + event.detail.value);
   }
 
-  cambiarDarkMode() {
+  onDarkMode() {
     console.log('darkmode');
     this.darkMode = !this.darkMode;
     document.body.classList.toggle('dark');

@@ -17,6 +17,7 @@ export class AjustesPage implements OnInit {
   constructor(
     private translateService: TranslateService) { }
 
+
   ngOnInit() {
     this.idiomas = this.translateService.getLangs();
     this.idiomaDefecto = this.translateService.getDefaultLang();

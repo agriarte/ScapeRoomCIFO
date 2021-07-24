@@ -35,7 +35,7 @@
         <ion-label>
           {{ "AJUSTESNOCHEDIA" | translate }}
         </ion-label>
-        <ion-toggle id="themeToggle" slot="end" [ngModel]="darkMode" (ionChange)="cambiarDarkMode()"></ion-toggle>
+        <ion-toggle id="themeToggle" slot="end" (ionChange)="onDarkMode($event)"></ion-toggle>
       </ion-item>
     </ion-list>
   </div>
