@@ -12,7 +12,7 @@ export class AjustesPage implements OnInit {
   idiomas: string[] = [];
   idiomaDefecto: string;
 
-  darkMode = false;
+  darkMode = true;
 
   constructor(
     private translateService: TranslateService) { }
@@ -31,7 +31,7 @@ export class AjustesPage implements OnInit {
 
   cambiarDarkMode() {
     console.log('darkmode');
-    this.darkMode = !this.darkMode;
-    document.body.classList.toggle('dark');
+    // this.darkMode = !this.darkMode;
+    // document.body.classList.toggle('dark');
   }
 }

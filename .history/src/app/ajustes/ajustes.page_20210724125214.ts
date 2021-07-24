@@ -12,7 +12,7 @@ export class AjustesPage implements OnInit {
   idiomas: string[] = [];
   idiomaDefecto: string;
 
-  darkMode = false;
+  darkMode = true;
 
   constructor(
     private translateService: TranslateService) { }
