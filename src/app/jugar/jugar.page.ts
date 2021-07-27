@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jugar',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JugarPage implements OnInit {
 
-  constructor() { }
+  constructor(private authSvc: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  logout(){
+    this.authSvc.logout();
+    this.router.navigate(['/home']);
+  }
 }

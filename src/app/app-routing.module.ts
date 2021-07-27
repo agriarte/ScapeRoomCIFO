@@ -1,19 +1,27 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+//GUARD
+import { AuthGuard } from './shared/auth.guard';
+
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
   {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   },
   {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+
+  {
     path: 'mapa',
-    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule),canActivate: [AuthGuard],
   },
   {
     path: 'ayuda',
@@ -21,15 +29,13 @@ const routes: Routes = [
   },
   {
     path: 'jugar',
-    loadChildren: () => import('./jugar/jugar.module').then( m => m.JugarPageModule)
+    loadChildren: () => import('./jugar/jugar.module').then( m => m.JugarPageModule),canActivate: [AuthGuard],
   },
   {
     path: 'ajustes',
     loadChildren: () => import('./ajustes/ajustes.module').then( m => m.AjustesPageModule)
-  },  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+
 
 ];
 
