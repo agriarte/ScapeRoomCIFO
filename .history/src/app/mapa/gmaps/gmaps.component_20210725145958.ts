@@ -49,27 +49,21 @@ export class GmapsComponent implements OnInit {
     console.log('loadMap');
     //Localización plaza Catalunya
     const plzCatalunya = { lat: 41.38701883110635, lng: 2.1700331467308085 };
-    //
+    // The map, centered at Uluru
     const map = new google.maps.Map(
       document.getElementById('map') as HTMLElement,
       {
-        zoom: 18,
+        zoom: 16,
         center: plzCatalunya,
       }
     );
 
-    // marcador, plaza catalunya
+    // The marker, positioned at Uluru
     const marker = new google.maps.Marker({
       position: plzCatalunya,
       map: map,
     });
   }
-
-  // ubicacion Portal del Angel
-  // 41.38680588280507, 2.171534459792433
-
-  // fuente de Santa Anna
-  // 41.384590172142566, 2.174188480755004
 
 }
 

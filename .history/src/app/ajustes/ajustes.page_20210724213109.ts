@@ -31,7 +31,7 @@ export class AjustesPage implements OnInit {
 
   //https://itelisoft.com/dark-mode-en-ionic-5/
   cambiarDarkMode() {
-    console.log('cambiarDarkMode');
+    console.log('darkmode');
     this.darkMode = !this.darkMode;
     document.body.classList.toggle('dark');
   }

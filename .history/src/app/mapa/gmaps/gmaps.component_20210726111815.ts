@@ -49,7 +49,7 @@ export class GmapsComponent implements OnInit {
     console.log('loadMap');
     //Localización plaza Catalunya
     const plzCatalunya = { lat: 41.38701883110635, lng: 2.1700331467308085 };
-    //
+    // The map, centered at Uluru
     const map = new google.maps.Map(
       document.getElementById('map') as HTMLElement,
       {

@@ -1,20 +1,21 @@
+import { calcPossibleSecurityContexts } from '@angular/compiler/src/template_parser/binding_parser';
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-
-//si no reconoce google declararla previamente
-declare const google;
 
 @Component({
   selector: 'app-gmaps',
   templateUrl: './gmaps.component.html',
   styleUrls: ['./gmaps.component.scss'],
 })
-
-
 export class GmapsComponent implements OnInit {
 
   //parecido a getElementbyId. En la vista HTML se refiere a #map no al id.
   @ViewChild('map', { static: true }) mapElement: ElementRef;
+
+  //si no reconoce google declararla previamente
+  //declare const google;
+
+
 
   map: any;
   miMarker: any; // marker con mi ubicacion
@@ -42,34 +43,9 @@ export class GmapsComponent implements OnInit {
     });
   }
 
-
-
-  // Initialize and add the map
-  loadMap(): void {
-    console.log('loadMap');
-    //Localización plaza Catalunya
-    const plzCatalunya = { lat: 41.38701883110635, lng: 2.1700331467308085 };
-    //
-    const map = new google.maps.Map(
-      document.getElementById('map') as HTMLElement,
-      {
-        zoom: 18,
-        center: plzCatalunya,
-      }
-    );
-
-    // marcador, plaza catalunya
-    const marker = new google.maps.Marker({
-      position: plzCatalunya,
-      map: map,
-    });
+  loadMap(){
+    alert('mapa');
   }
-
-  // ubicacion Portal del Angel
-  // 41.38680588280507, 2.171534459792433
-
-  // fuente de Santa Anna
-  // 41.384590172142566, 2.174188480755004
 
 }
 
