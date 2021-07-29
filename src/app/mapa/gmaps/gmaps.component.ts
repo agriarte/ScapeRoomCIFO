@@ -1,5 +1,8 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { Photo, PhotoService } from '../../services/photo.service';
+import { ActionSheetController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 //si no reconoce google declararla previamente
 declare const google;
@@ -22,11 +25,14 @@ export class GmapsComponent implements OnInit {
   miLatitud1: any;
   miLongitud1: any;
 
-  constructor(private geolocation: Geolocation) { }
+  constructor(private geolocation: Geolocation, public photoService: PhotoService, 
+    public actionSheetController: ActionSheetController,
+    public toastController: ToastController) { }
 
-  ngOnInit() {
+    async ngOnInit() {
     //se esperan coordenadas de geolocation y cuando llegan se inicia escucha de watchPosition
     this.getCoordenadas();
+    await this.photoService.loadSaved();
   }
 
   getCoordenadas() {
@@ -70,6 +76,39 @@ export class GmapsComponent implements OnInit {
 
   // fuente de Santa Anna
   // 41.384590172142566, 2.174188480755004
+
+  addPhotoToGallery() {
+    this.photoService.addNewToGallery();
+  }
+
+  public async showActionSheet(photo: Photo, position: number) {
+    //Defino un toast
+    const toast = await this.toastController.create({
+      message: 'Imagen eliminada correctamente.',
+      duration: 2000
+    });
+    
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Photos',
+      buttons: [{
+        text: 'Delete',
+        role: 'destructive',
+        icon: 'trash',
+        handler: () => {
+          this.photoService.deletePicture(photo, position);
+          toast.present();
+        },
+      }, {
+        text: 'Cancel',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          // Nothing to do, action sheet is automatically closed
+          }
+      }]
+    });
+    await actionSheet.present();
+  }
 
 }
 

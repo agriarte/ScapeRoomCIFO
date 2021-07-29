@@ -15,4 +15,18 @@
       </div>
     </ion-col>
   </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-fab-button color="success" (click)="addPhotoToGallery()">
+        <ion-icon name="camera"color="primary"></ion-icon>
+      </ion-fab-button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="6"
+    *ngFor="let photo of photoService.photos; index as position">
+      <ion-img [src]="photo.webviewPath"
+            (click)="showActionSheet(photo, position)"></ion-img>
+</ion-col>
+  </ion-row>
 </ion-grid>
