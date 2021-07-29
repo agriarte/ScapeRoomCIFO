@@ -1,14 +1,25 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  RouterStateSnapshot,
+  UrlTree,
+  Router,
+} from '@angular/router';
+import { ToastController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { AuthService } from '../services/authentication.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(private authSvc: AuthService, private router: Router) {}
+  constructor(
+    private authSvc: AuthService,
+    private router: Router,
+    private toastCtrl: ToastController
+  ) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -25,6 +36,7 @@ export class AuthGuard implements CanActivate {
           return true;
         } else {
           //redirect to login
+          this.authSvc.errorLoggedOff();
           this.router.navigate(['/home']);
           return false;
         }

@@ -9,6 +9,7 @@ import {
 import { User } from '../shared/user';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { ToastController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,11 @@ import { switchMap } from 'rxjs/operators';
 export class AuthService {
   public user$: Observable<User>;
 
-  constructor(public afAuth: AngularFireAuth, private afs: AngularFirestore) {
+  constructor(
+    public afAuth: AngularFireAuth,
+    private afs: AngularFirestore,
+    private toastCtrl: ToastController
+  ) {
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
         if (user) {
@@ -93,6 +98,16 @@ export class AuthService {
     }
   }
 
+  async errorLoggedOff() {
+    const toast = await this.toastCtrl.create({
+      message: 'PLEASE LOG IN',
+      position: 'middle',
+      color: 'warning',
+      duration: 2000,
+    });
+    toast.present();
+  }
+
   private updateUserData(user: User) {
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(
       `users/${user.uid}`
@@ -102,7 +117,7 @@ export class AuthService {
       email: user.email,
       emailVerified: user.emailVerified,
       displayName: user.displayName,
-      photoURL: user.photoURL
+      photoURL: user.photoURL,
     };
 
     return userRef.set(data, { merge: true });
