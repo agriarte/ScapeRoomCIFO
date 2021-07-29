@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+        <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title autocapitalize="true">login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form>
+    
+       <ion-row class="ion-padding-top">
+          <ion-col>
+            <ion-button
+              type="submit"
+              color="danger"
+              (click)="onLoginGoogle()"
+              expand="block"
+            >
+              Login with Google
+            </ion-button>
+          </ion-col>
+        </ion-row>
+    
+</form>
+</ion-content>

@@ -1,0 +1,31 @@
+{
+  "APPLOGIN": "Entrar",
+  "APPMENU": "Menú",
+  "APPHOME" : "Inici",
+  "APPMAPA": "Mapa",
+  "APPJUGAR": "Jugar",
+  "APPAYUDA": "Ajuda",
+  "APPCONFIGURACION": "Configuració",
+
+  "INICIOTITULONAVBAR": "Benvinguts a Scape Room Barcelona",
+  "INICIOTITULO1": "Descobreix la ciutat jugant!",
+  "INICIOTEXTO1": "Secrets de l'Antiga Barcelona és una aventura única i entretinguda que permet conèixer la ciutat, la seva història i les seves llegendes en forma de joc. En aquest divertit i singular Escape Room a Barcelona a l'aire lliure aneu a descobrir moltes dades curioses sobre la ciutat resolent diversos endevinalles i enigmes per arribar a el punt final de el joc i salvar el món. ",
+  "INICIOTITULO2": "El Gòtic, el barri més misteriós de Barcelona",
+
+  "MAPTITULONAVBAR": "Map",
+  "MAPTITULO1": "Barri Gòtic de Barcelona ",
+  "MAPTEXTO1": "aqui va googlemap de BCN, zona de joc el Barri Gòtic",
+
+  "JUGARTITULONAVBAR" : "JUGAR",
+  "JUGARTEXTO1" : "Començem a jugar, etc, etc",
+  "JUGARTIEMPORESTANTE" : "Temps per acabar el joc",
+
+  "AYUDATITULONAVBAR" : "Ajuda",
+  "AYUDATEXTO1" : "Som a la pàgina d'ajuda",
+  "AYUDATEXTO2" : "¿Consells? ¿A on anar? ",
+
+  "AJUSTESTITULONAVBAR" : "Configuració",
+  "AJUSTESTITULO" : "Ajustes",
+  "AJUSTESIDIOMA" : "idioma",
+  "AJUSTESNOCHEDIA" : "Nit/Dia"
+}

@@ -13,6 +13,13 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+//IMPORTS FIREBASE
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+
 // importante poner el export antes de ngmodule o dará error: @ngmodule decorators are not valid here
 export function miHttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader (httpClient, '../assets/i18n/', '.json');
@@ -25,6 +32,10 @@ export function miHttpLoaderFactory(httpClient: HttpClient) {
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({

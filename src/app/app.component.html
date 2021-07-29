@@ -9,6 +9,10 @@
       <ion-content>
         <ion-list>
           <ion-menu-toggle auto-hide="false">
+<ion-item [routerDirection]="'root'" [routerLink]="'/login'" >
+  <ion-icon slot="start" [name]="'log-in'"></ion-icon>
+  <ion-label>{{"APPLOGIN" | translate}}</ion-label>
+</ion-item>
 
             <ion-item [routerDirection]="'root'" [routerLink]="'/home'">
               <ion-icon slot="start" [name]="'home'"></ion-icon>

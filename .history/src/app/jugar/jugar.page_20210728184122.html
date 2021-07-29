@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>{{ "JUGARTITULONAVBAR" | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-chip color="secondary" outline="true">
+    <ion-label> {{ "JUGARTEXTO1" | translate }}</ion-label>
+  </ion-chip>
+
+  <div class="timer">
+    <h4> Tiempo restante para acabar el juego: </h4>
+    <span id="hours"> {{hoursToDday}} </span>Hrs
+    <span id="minutes"> {{minutesToDday}} </span>Min
+    <span id="seconds"> {{secondsToDday}} </span>S
+</div>
+
+  <ion-button (click)="logout()" expand="block" fill="clear" shape="round">
+    Cerrar Sesión
+  </ion-button>
+
+</ion-content>

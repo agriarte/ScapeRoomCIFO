@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>{{ "JUGARTITULONAVBAR" | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+   <ion-button (click)="comenzarJuego()">
+    <ion-icon slot="start" name="walk-outline"></ion-icon>
+    {{ "JUGARBOTONEMPEZAR" | translate }}
+  </ion-button>
+
+
+
+  <div class="timer">
+    <h5>{{ "JUGARTIEMPORESTANTE" | translate }}</h5>
+    <span id="hours"> {{hoursToDday}} </span>H
+    <span id="minutes"> {{minutesToDday}} </span>M
+    <span id="seconds"> {{secondsToDday}} </span>S
+  </div>
+
+  <app-googlemaps></app-googlemaps>
+
+  <ion-button (click)="logout()" expand="block" fill="clear" shape="round">
+    Cerrar Sesión
+  </ion-button>
+
+</ion-content>
