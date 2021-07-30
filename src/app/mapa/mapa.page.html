@@ -12,5 +12,8 @@
     <h4>{{ "MAPTITULO1" | translate }}</h4>
     <p>{{ "MAPTEXTO1" | translate }}</p>
   </ion-text>
-<app-gmaps></app-gmaps>
+  <app-gmaps></app-gmaps>
+  <ion-button (click)="logout()" expand="block" fill="clear" shape="round">
+    {{"MAPCERRARSESION" | translate}}
+  </ion-button>
 </ion-content>

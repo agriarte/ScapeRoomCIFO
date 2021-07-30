@@ -25,6 +25,7 @@ export class AuthService {
     this.user$ = this.afAuth.authState.pipe(
       switchMap((user) => {
         if (user) {
+          console.log('hay sesion');
           return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         }
         return of(null);
@@ -93,6 +94,13 @@ export class AuthService {
   async logout(): Promise<void> {
     try {
       await this.afAuth.signOut();
+      const toast = await this.toastCtrl.create({
+        message: 'BYE BYE',
+        position: 'middle',
+        color: 'warning',
+        duration: 2000,
+      });
+      toast.present();
     } catch (error) {
       console.log('Error : ', error);
     }

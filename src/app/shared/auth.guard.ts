@@ -6,7 +6,6 @@ import {
   UrlTree,
   Router,
 } from '@angular/router';
-import { ToastController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { AuthService } from '../services/authentication.service';
@@ -15,11 +14,7 @@ import { AuthService } from '../services/authentication.service';
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(
-    private authSvc: AuthService,
-    private router: Router,
-    private toastCtrl: ToastController
-  ) {}
+  constructor(private authSvc: AuthService, private router: Router) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
