@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "sidemenu",
-	"webDir": "www",
-	"bundledWebRuntime": false
+  "appId": "com.dncweb.escapeRoomBCN",
+  "appName": "ProyectoFinalCIFO",
+  "webDir": "www",
+  "bundledWebRuntime": false
 }
